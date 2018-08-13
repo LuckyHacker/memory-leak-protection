@@ -17,4 +17,6 @@ def monitor_memory():
         time.sleep(1)
 
 
-threading.Thread(target=monitor_memory).start()
+t = threading.Thread(target=monitor_memory)
+t.daemon = True
+t.start()
